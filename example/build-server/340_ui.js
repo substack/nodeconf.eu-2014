@@ -1,12 +1,11 @@
-var batchdb = require('batchdb-shell');
-var db = require('level')('/tmp/compute.db');
-var compute = batchdb(db, { path: '/tmp/compute.blobs' });
+var level = require('level');
+var db = level('/tmp/build-server.db');
+var compute = require('batchdb-shell')(db, { path: '/tmp/build-server.blob' });
+compute.run();
 
 var http = require('http');
 var api = require('batchdb-web-api')(compute);
 var ui = require('batchdb-web-ui')(compute);
-
-compute.run();
 
 var server = http.createServer(function (req, res) {
     if (api.exec(req, res)) return;
@@ -16,3 +15,5 @@ var server = http.createServer(function (req, res) {
     res.end('not found\n');
 });
 server.listen(5000);
+
+// 340_ui.js

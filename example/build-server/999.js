@@ -11,14 +11,17 @@
   * batch queue scripts with http ui
   * batch queue scripts with http api and http ui
   * shell command capture and parsing
-  * bot net
+  * botnet
+  * browser botnet
 
-  packages written:
+  packages used:
   
   * batchdb
   * batchdb-shell
   * shell-pack
   * batchdb-web-api
   * batchdb-web-ui
+  * botnet-pool
+  * botnet-browser-worker
 
 */
