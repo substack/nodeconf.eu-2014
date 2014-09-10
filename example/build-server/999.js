@@ -11,6 +11,7 @@
   * batch queue scripts with http ui
   * batch queue scripts with http api and http ui
   * shell command capture and parsing
+  * bot net
 
   packages written:
   

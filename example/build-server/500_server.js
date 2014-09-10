@@ -40,7 +40,6 @@ router.addRoute('/job/:id', function (req, res, m) {
 var server = http.createServer(function (req, res) {
     var m = router.match(req.url);
     if (m) m.fn(req, res, m);
-    compute.getResult(process.argv[2]).pipe(process.stdout);
 });
 server.listen(5000);
 
